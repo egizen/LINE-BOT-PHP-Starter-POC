@@ -10,9 +10,9 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && (strpos($event['message']['text'], 'ManZ') !== FALSE)) {
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && (strpos($event['message']['text'], 'ManZ') !== FALSE) || (strpos($event['message']['text'], 'แมน') !== FALSE)) {
 			// Get text sent
-			$text = 'มาตอบเร็วๆๆๆๆๆๆๆๆๆๆ';
+			$text = 'พี่แมนมีคนเรียกมาตอบเร็วๆๆๆๆๆๆๆๆๆๆ';
 			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
