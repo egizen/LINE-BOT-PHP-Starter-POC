@@ -16,6 +16,11 @@ if (!is_null($events['events'])) {
 			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+			
+			if(strpos($event['message']['text'], 'สวัสดี007') !== FALSE)
+			{
+				$text = '007 มารายงานตัวแล้วงับ!';
+			}
 
 			// Build message to reply back
 			$messages = [
