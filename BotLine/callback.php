@@ -18,18 +18,40 @@ $events = $bot->parseEventRequest($body, $signature);
 
 foreach ($events as $event) {
     if ($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage) {
-        $reply_token = $event->getReplyToken();
-        $text = $event->getText();
-        $bot->replyText($reply_token, $text);
+		
+		$text = $event->getText();
+		
+		if (strpos($text, '007 อยากรู้') !== FALSE) {
+			$text_ex = explode(' ', $text);
+			$ch1 = curl_init();
+			curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch1, CURLOPT_URL, 'https://th.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles='.$text_ex[2]);
+			$result1 = curl_exec($ch1);
+			curl_close($ch1);
+			
+			$obj = json_decode($result1, true);
+			
+			foreach($obj['query']['pages'] as $key => $val){ 
+				$result_text = $val['extract']; 
+			}
+			
+			if(empty($result_text)){
+				$result_text = 'ไม่พบข้อมูล';
+			}
+			
+			$reply_token = $event->getReplyToken();
+			$bot->replyText($reply_token, $result_text);
+		}
     }
-	else if($event instanceof \LINE\LINEBot\Event\MessageEvent\ImageMessage)
+	
+	
+/* 	else if($event instanceof \LINE\LINEBot\Event\MessageEvent\ImageMessage)
 	{
 		$fullImage = "https://enigmatic-coast-62856.herokuapp.com/BotLine/image/memeFull.jpg";
 		$preImage = "https://enigmatic-coast-62856.herokuapp.com/BotLine/image/memePre.jpg";
 		$reply_token = $event->getReplyToken();
-		//$text = $fullImage.$preImage;
-        //$bot->replyText($reply_token, $text);
 		$imageMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder($fullImage, $preImage);
 		$bot->replyMessage($reply_token, $imageMessageBuilder);
-	}
+	} */
 }
