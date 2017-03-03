@@ -21,7 +21,7 @@ foreach ($events as $event) {
 		
 		$text = $event->getText();
 		
-		if (strpos($text, '007 อยากรู้') !== FALSE) {
+/* 		if (strpos($text, '007 อยากรู้') !== FALSE) {
 			$text_ex = explode(' ', $text);
 			$ch1 = curl_init();
 			curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
@@ -39,7 +39,8 @@ foreach ($events as $event) {
 			if(empty($result_text)){
 				$result_text = 'ไม่พบข้อมูล';
 			}
-		}else if (strpos($text, '007 อากาศ') !== FALSE) {
+		}else  */
+		if (strpos($text, '007 อากาศ') !== FALSE) {
 			$text_ex = explode(' ', $text);
 			$ch2 = curl_init();
 			curl_setopt($ch2, CURLOPT_SSL_VERIFYPEER, false);
