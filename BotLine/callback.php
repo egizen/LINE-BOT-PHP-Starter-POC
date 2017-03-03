@@ -24,12 +24,12 @@ foreach ($events as $event) {
     }
 	else if($event instanceof \LINE\LINEBot\Event\MessageEvent\ImageMessage)
 	{
-		$fullImage = __DIR__."/../BotLine/image/memeFull.jpg";
-		$preImage = __DIR__."/../BotLine/image/memePre.jpg";
+		$fullImage = __DIR__."/image/memeFull.jpg";
+		$preImage = __DIR__."/image/memePre.jpg";
 		$reply_token = $event->getReplyToken();
-		$text = $fullImage.$preImage;
-        $bot->replyText($reply_token, $text);
-		//$imageMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder($fullImage, $preImage);
-		//$bot->replyMessage($reply_token, $imageMessageBuilder);
+		//$text = $fullImage.$preImage;
+        //$bot->replyText($reply_token, $text);
+		$imageMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder($fullImage, $preImage);
+		$bot->replyMessage($reply_token, $imageMessageBuilder);
 	}
 }
