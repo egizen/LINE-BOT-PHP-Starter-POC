@@ -24,8 +24,10 @@ foreach ($events as $event) {
     }
 	else if($event instanceof \LINE\LINEBot\Event\MessageEvent\ImageMessage)
 	{
+		$fullImage = __DIR__."/../BotLine/image/memeFull.jpg";
+		$preImage = __DIR__."/../BotLine/image/memePre.jpg";
 		$reply_token = $event->getReplyToken();
-		$imageMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('image/memeFull.jpg', 'image/memePre.jpg');
+		$imageMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder($fullImage, $preImage);
 		$bot->replyMessage($reply_token, $imageMessageBuilder);
 	}
 }
