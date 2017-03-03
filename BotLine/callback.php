@@ -46,7 +46,7 @@ foreach ($events as $event) {
 		
 		if (strpos($text, '007 อากาศ') !== FALSE) {
 			$text_ex = explode(' ', $text);
-			$ch1 = curl_init();
+			$ch2 = curl_init();
 			curl_setopt($ch2, CURLOPT_SSL_VERIFYPEER, false);
 			curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch2, CURLOPT_URL, 'http://api.wunderground.com/api/487aafe9ed0df755/forecast/lang:TH/q/Thailand/'.str_replace(' ', '%20', $text_ex[2]).'.json');
