@@ -39,12 +39,8 @@ foreach ($events as $event) {
 			if(empty($result_text)){
 				$result_text = 'ไม่พบข้อมูล';
 			}
-			
-			$reply_token = $event->getReplyToken();
-			$bot->replyText($reply_token, $result_text);
 		}
-		
-		if (strpos($text, '007 อากาศ') !== FALSE) {
+		else if (strpos($text, '007 อากาศ') !== FALSE) {
 			$text_ex = explode(' ', $text);
 			$ch2 = curl_init();
 			curl_setopt($ch2, CURLOPT_SSL_VERIFYPEER, false);
@@ -61,10 +57,13 @@ foreach ($events as $event) {
 			else(empty($result_text)){
 				$result_text = 'ไม่พบข้อมูล';
 			}
-			
+		}
+		
+		if(!empty($result_text)){
 			$reply_token = $event->getReplyToken();
 			$bot->replyText($reply_token, $result_text);
 		}
+		
     }
 	
 	
