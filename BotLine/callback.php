@@ -24,8 +24,8 @@ foreach ($events as $event) {
     }
 	else if($event instanceof \LINE\LINEBot\Event\MessageEvent\ImageMessage)
 	{
-		$fullImage = __DIR__."/image/memeFull.jpg";
-		$preImage = __DIR__."/image/memePre.jpg";
+		$fullImage = "https://enigmatic-coast-62856.herokuapp.com/BotLine/image/memeFull.jpg";
+		$preImage = "https://enigmatic-coast-62856.herokuapp.com/BotLine/image/memePre.jpg";
 		$reply_token = $event->getReplyToken();
 		//$text = $fullImage.$preImage;
         //$bot->replyText($reply_token, $text);
