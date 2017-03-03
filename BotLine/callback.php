@@ -27,7 +27,9 @@ foreach ($events as $event) {
 		$fullImage = __DIR__."/../BotLine/image/memeFull.jpg";
 		$preImage = __DIR__."/../BotLine/image/memePre.jpg";
 		$reply_token = $event->getReplyToken();
-		$imageMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder($fullImage, $preImage);
-		$bot->replyMessage($reply_token, $imageMessageBuilder);
+		$text = $fullImage.$preImage;
+        $bot->replyText($reply_token, $text);
+		//$imageMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder($fullImage, $preImage);
+		//$bot->replyMessage($reply_token, $imageMessageBuilder);
 	}
 }
