@@ -44,7 +44,7 @@ foreach ($events as $event) {
 			$ch2 = curl_init();
 			curl_setopt($ch2, CURLOPT_SSL_VERIFYPEER, false);
 			curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch2, CURLOPT_URL, 'http://api.wunderground.com/api/487aafe9ed0df755/forecast/lang:TH/q/Thailand/'.str_replace(' ', '%20', $text_ex[2]).'.json');
+			curl_setopt($ch2, CURLOPT_URL, 'http://api.wunderground.com/api/71503e2adeb68c63/forecast/lang:TH/q/Thailand/'.str_replace(' ', '%20', $text_ex[2]).'.json');
 			$result1 = curl_exec($ch2);
 			curl_close($ch2);
 			
