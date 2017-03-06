@@ -29,7 +29,7 @@ foreach ($events as $event) {
 		}
 		
 		//fwd mobile inc from war room to team group.
-		if($event->isGroupEvent() && $event->getGroupId() == 'C92ba367859d8098c1b4308ca158150a0' && strpos($text, 'mobile') !== FALSE) {
+		if($event->isGroupEvent() && $event->getGroupId() == 'C92ba367859d8098c1b4308ca158150a0' && strpos(strtolower($text), 'mobile') !== FALSE) {
 			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
 			$response = $bot->pushMessage('C92ba367859d8098c1b4308ca158150a0', $textMessageBuilder);
 		}
