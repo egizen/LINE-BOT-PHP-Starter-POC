@@ -46,8 +46,13 @@ foreach ($events as $event) {
 			$obj = json_decode($result1, true);
 			
 			foreach($obj['query']['pages'] as $key => $val){ 
-				$result_text = $val['extract']; 
+				$result_text = $val['extract'];
 			}
+			
+			//for debug
+			$result_text = "[".$result_text."]";
+			$reply_token = $event->getReplyToken();
+			$bot->replyText($reply_token, $result_text);
 			
 			if(empty($result_text)){ //search in EN
 				$ch1 = curl_init();
