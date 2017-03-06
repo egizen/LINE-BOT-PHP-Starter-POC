@@ -50,7 +50,7 @@ foreach ($events as $event) {
 			}
 			
 			//for debug
-			$result_text += "[".$result_text."]";
+			$result_text .= '['.$result_text.']';
 			$reply_token = $event->getReplyToken();
 			$bot->replyText($reply_token, $result_text);
 			
