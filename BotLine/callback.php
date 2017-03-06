@@ -49,7 +49,7 @@ foreach ($events as $event) {
 				$result_text = $val['extract'];
 			}
 			
-			if(!isset($result_text)){ //search in EN
+			if(trim($result_text) == ''){ //search in EN
 				$ch1 = curl_init();
 				curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
 				curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
