@@ -21,6 +21,11 @@ foreach ($events as $event) {
 		
 		$text = $event->getText();
 		
+		$groupID = $event->getGroupId();
+		$reply_token = $event->getReplyToken();
+		$bot->replyText($reply_token, $groupID);
+		
+		
  		if (strpos($text, '007 อยากรู้') !== FALSE) {
 			$text_ex = explode(' ', $text);
 			$ch1 = curl_init();
