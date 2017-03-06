@@ -36,7 +36,7 @@ foreach ($events as $event) {
 		
  		if (strpos($text, '007 อยากรู้') !== FALSE) { //get info from wiki.
 			$text_ex = explode(' ', $text);
-/* 			$ch1 = curl_init();
+ 			$ch1 = curl_init();
 			curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
 			curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch1, CURLOPT_URL, 'https://th.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles='.$text_ex[2]);
@@ -47,9 +47,9 @@ foreach ($events as $event) {
 			
 			foreach($obj['query']['pages'] as $key => $val){ 
 				$result_text = $val['extract'];
-			} */
+			}
 			
-			//if(trim($result_text) == ''){ //search in EN
+			if(empty($result_text)){ //search in EN
 				$ch2 = curl_init();
 				curl_setopt($ch2, CURLOPT_SSL_VERIFYPEER, false);
 				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
@@ -62,7 +62,7 @@ foreach ($events as $event) {
 				foreach($obj['query']['pages'] as $key => $val){ 
 					$result_text = $val['extract']; 
 				}
-			//}
+			}
 			
 			if(empty($result_text)){
 				$result_text = 'ไม่พบข้อมูล';
