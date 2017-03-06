@@ -88,7 +88,7 @@ foreach ($events as $event) {
 		
 		if(!empty($result_text)){
 			$reply_token = $event->getReplyToken();
-			$bot->replyText($reply_token, $result_text);
+			$bot->replyText($reply_token, substr($result_text, 0, 2000));
 		}
     }
 	
