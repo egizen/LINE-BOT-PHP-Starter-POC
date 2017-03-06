@@ -21,7 +21,8 @@ foreach ($events as $event) {
 		
 		$text = $event->getText();
 		
-		$bot->pushMessage('C92ba367859d8098c1b4308ca158150a0', 'TestPush');
+		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
+		$response = $bot->pushMessage('C92ba367859d8098c1b4308ca158150a0', $textMessageBuilder);
 		
  		if (strpos($text, '007 อยากรู้') !== FALSE) {
 			$text_ex = explode(' ', $text);
