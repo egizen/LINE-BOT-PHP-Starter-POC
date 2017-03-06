@@ -21,10 +21,7 @@ foreach ($events as $event) {
 		
 		$text = $event->getText();
 		
-		$groupID = $event->getGroupId();
-		$reply_token = $event->getReplyToken();
-		$bot->replyText($reply_token, $groupID);
-		
+		$bot->pushMessage('C92ba367859d8098c1b4308ca158150a0', 'TestPush');
 		
  		if (strpos($text, '007 อยากรู้') !== FALSE) {
 			$text_ex = explode(' ', $text);
