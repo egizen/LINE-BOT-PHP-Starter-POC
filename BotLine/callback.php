@@ -1,8 +1,8 @@
 <?php // callback.php
 echo "OK";
 
-define("LINE_MESSAGING_API_CHANNEL_SECRET", '0741b7e3da24f7b071637fb731ef1777');
-define("LINE_MESSAGING_API_CHANNEL_TOKEN", 'VTECj7jjrSAqG8amUkWnSTxghAsTISeZTAxeTq0cYkKkS1M8LfKl2dX/4lkoarWE9XlqL3fYmdBPiowrlfKEiiD44r/HgLFwt4O4GNU5ZDvAjJB4uesc04SqAIuHcNv0PjvpfPQKjg+VfSbkAuV+CQdB04t89/1O/w1cDnyilFU=');
+define("LINE_MESSAGING_API_CHANNEL_SECRET", 'e323c611747d4b50c1077c4b0a8afab4');
+define("LINE_MESSAGING_API_CHANNEL_TOKEN", 'gSxMc0sN0lzZueA6U9tGdTdi16EwknAsjwYcrC5i9XKt9PDzNgFS1ztM5sYgv4b4LlhFpWTNcAdYfwyxK6DAUzrUzj3XeSmXQgNrLTGaOaTLkHBJKiI+3sh0JvUQOSwmEJ+pNPGne6se+Je9BXWCKgdB04t89/1O/w1cDnyilFU=');
 
 require __DIR__."/../vendor/autoload.php";
 
@@ -29,10 +29,10 @@ foreach ($events as $event) {
 		} */
 		
 		//fwd mobile inc from war room to team group.
-		if($event->isGroupEvent() && $event->getGroupId() == 'Ce70fd831ce381db12fcdfbdb1efa3875' && (stripos($text, 'k-plus') !== FALSE || stripos($text, 'k plus') !== FALSE || stripos($text, 'mobile') !== FALSE)) {
+		/*if($event->isGroupEvent() && $event->getGroupId() == 'Ce70fd831ce381db12fcdfbdb1efa3875' && (stripos($text, 'k-plus') !== FALSE || stripos($text, 'k plus') !== FALSE || stripos($text, 'mobile') !== FALSE)) {
 			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
 			$response = $bot->pushMessage('C5b971f1879eec72b49727f1498177f4c', $textMessageBuilder);
-		}
+		}*/
 		
  		if (strpos($text, '007 อยากรู้') !== FALSE) { //get info from wiki.
 			$text_ex = explode(' ', $text);
