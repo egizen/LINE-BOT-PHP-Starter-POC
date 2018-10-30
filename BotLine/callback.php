@@ -95,12 +95,12 @@ foreach ($events as $event) {
     }
 	
 	
-/* 	else if($event instanceof \LINE\LINEBot\Event\MessageEvent\ImageMessage)
+ 	else if($event instanceof \LINE\LINEBot\Event\MessageEvent\ImageMessage)
 	{
 		$fullImage = "https://enigmatic-coast-62856.herokuapp.com/BotLine/image/memeFull.jpg";
 		$preImage = "https://enigmatic-coast-62856.herokuapp.com/BotLine/image/memePre.jpg";
 		$reply_token = $event->getReplyToken();
 		$imageMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder($fullImage, $preImage);
 		$bot->replyMessage($reply_token, $imageMessageBuilder);
-	} */
+	} 
 }
