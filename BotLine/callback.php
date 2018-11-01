@@ -22,12 +22,12 @@ foreach ($events as $event) {
 		$text = $event->getText();
 		
 		//get group id
- 		if($event->isGroupEvent()) {
+ 		/*if($event->isGroupEvent()) {
 			$text22 = $event->getGroupId();
 			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text22);
 			$response = $bot->pushMessage($event->getGroupId(), $textMessageBuilder);
 			$response = $bot->pushMessage('Cc99b47c97b2343703d565048ff0670c3', $textMessageBuilder);
-		}
+		}*/
 		
 		//fwd mobile inc from war room to team group.
 		/*if($event->isGroupEvent() && $event->getGroupId() == 'Ce70fd831ce381db12fcdfbdb1efa3875' && (stripos($text, 'k-plus') !== FALSE || stripos($text, 'k plus') !== FALSE || stripos($text, 'mobile') !== FALSE)) {
