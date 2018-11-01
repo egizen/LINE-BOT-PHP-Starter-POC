@@ -23,7 +23,7 @@ foreach ($events as $event) {
 		
 		//get group id
  		if($event->isGroupEvent()) {
-			$text22 = $event->getGroupId();
+			$text22 = $event->getUserId();
 			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text22);
 			$response = $bot->pushMessage($event->getGroupId(), $textMessageBuilder);
 		}
