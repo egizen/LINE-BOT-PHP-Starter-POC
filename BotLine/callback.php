@@ -24,9 +24,8 @@ foreach ($events as $event) {
 		//get group id
  		if($event->isGroupEvent()) {
 			$text22 = $event->getGroupId();
-			$messagett = array($textMessageBuilder, $textMessageBuilder, $textMessageBuilder);
 			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text22);
-			$response = $bot->pushMessage($event->getGroupId(), $messagett);
+			$response = $bot->pushMessage($event->getGroupId(), $textMessageBuilder);
 		}
 		
 		//fwd mobile inc from war room to team group.
